@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/tools">
+
+    <Transition
+        app:constraintSetEnd="@layout/fragment_video_scene_02"
+        app:constraintSetStart="@layout/fragment_video_scene_01"
+        app:duration="700">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@+id/ivVideo"
+            app:touchAnchorSide="top" />
+
+    </Transition>
+
+     <ConstraintSet android:id="@+id/start_state">
+
+         <Constraint
+             android:id="@+id/ivVideo"
+             android:layout_width="0dp"
+             android:layout_height="240dp"
+             motion:layout_constraintStart_toStartOf="parent"
+             motion:layout_constraintTop_toTopOf="parent" />
+
+     </ConstraintSet>
+
+     <ConstraintSet android:id="@+id/end_state">
+
+         <Constraint
+             android:id="@+id/ivVideo"
+             android:layout_width="240dp"
+             android:layout_height="120dp"
+             android:layout_marginEnd="16dp"
+             android:layout_marginBottom="16dp"
+             motion:layout_constraintBottom_toBottomOf="parent"
+             motion:layout_constraintEnd_toEndOf="parent"
+             motion:ignore="DuplicateIds" />
+
+     </ConstraintSet>
+
+</MotionScene>
